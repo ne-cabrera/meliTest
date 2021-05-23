@@ -73,14 +73,10 @@ public class MutantService
     public Stats getStats()
     {
         StatsDTO dto = mutantRepository.countMutants();
+
         int mutants = dto.getMutants();
         int humans = dto.getHumans();
-
-        double ratio = 0;
-        if( mutants != 0 && humans != 0 )
-        {
-            ratio = (double) mutants/humans;
-        }
+        double ratio = mutants == 0 && humans == 0 ? 0 : (double) mutants/humans;
 
         return new Stats( mutants, humans, ratio );
     }
