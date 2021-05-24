@@ -59,7 +59,7 @@ public class MutantService
                     }
                 }
 
-                if( mutantSequences == 2 )
+                if( mutantSequences >= 2 )
                 {
                     isMutant = true;
                 }
