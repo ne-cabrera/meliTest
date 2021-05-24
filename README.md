@@ -1,5 +1,5 @@
 # Test mercadolibre
-#### La API esta desplegada en http://meli-test.sa-east-1.elasticbeanstalk.com/stats
+#### La API esta desplegada en http://meli-test.sa-east-1.elasticbeanstalk.com
 
 #### Prerrequisitos
 Es necesario contar con las siguientes dependencias:
