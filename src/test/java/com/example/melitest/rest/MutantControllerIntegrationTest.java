@@ -42,7 +42,7 @@ class MutantControllerIntegrationTest
 
         assertEquals( oldStats.getCountHumanDna() + 1, newStats.getCountHumanDna() );
         assertEquals( oldStats.getCountMutantDna(), newStats.getCountMutantDna() );
-        assertEquals( (double) oldStats.getCountMutantDna()/( oldStats.getCountHumanDna() + 1), newStats.getRatio() );
+        assertEquals( (double) oldStats.getCountMutantDna()/( oldStats.getCountHumanDna() + 1 ), newStats.getRatio() );
     }
 
     @Test
@@ -60,13 +60,15 @@ class MutantControllerIntegrationTest
         assertEquals( (double) ( oldStats.getCountMutantDna() + 1 )/oldStats.getCountHumanDna(), newStats.getRatio() );
     }
 
-    private ResultActions callMutantService( Person person ) throws Exception {
+    private ResultActions callMutantService( Person person ) throws Exception
+    {
         return mockMvc.perform( post( "/mutant" )
                 .contentType( "application/json" )
                 .content( objectMapper.writeValueAsString( person ) ) );
     }
 
-    private Stats getStats() throws Exception {
+    private Stats getStats() throws Exception
+    {
         String statsResponse = mockMvc.perform( get( "/stats" ) )
                 .andExpect( status().isOk() )
                 .andReturn()
