@@ -50,10 +50,10 @@ public class MutantService
                         mutantSequences ++;
                     }
                 }
-                if( i - 3 >= 0 && j - 3 >= 0 )
+                if( i + 3 < size && j - 3 >= 0 )
                 {
-                    if( DNA[i].charAt( j ) == DNA[i - 1].charAt( j - 1 ) && DNA[i].charAt( j ) == DNA[i - 2].charAt( j - 2 )
-                            && DNA[i].charAt( j ) == DNA[i - 3].charAt( j - 3 ) )
+                    if( DNA[i].charAt( j ) == DNA[i + 1].charAt( j - 1 ) && DNA[i].charAt( j ) == DNA[i + 2].charAt( j - 2 )
+                            && DNA[i].charAt( j ) == DNA[i + 3].charAt( j - 3 ) )
                     {
                         mutantSequences ++;
                     }
